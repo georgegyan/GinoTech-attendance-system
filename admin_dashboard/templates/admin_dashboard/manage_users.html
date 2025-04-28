@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Manage Users | GinoTech</title>
-    <link rel="stylesheet" href="{% static 'admin_dashboard/style.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_dashboard/style.css' %}">  
 </head>
 <body>
 
     <header>
         <h1>Manage Users</h1>
-        <p><a href="{% url 'dashboard_home' %}" style="color:white;">Back to Dashboard</a> | <a href="{% url 'user_logout' %}" style="color:white;">Logout</a></p>
+        <p><a href="{% url 'admin_dashboard:dashboard_home' %}" style="color:white;">Back to Dashboard</a> | <a href="{% url 'admin_dashboard:user_logout' %}" style="color:white;">Logout</a> | <a href="{% url 'admin_dashboard:add_user' %}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            + Add New User
+        </a>  </p>
     </header>
 
     <main>
