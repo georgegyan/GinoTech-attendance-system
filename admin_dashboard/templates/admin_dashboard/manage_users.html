@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Users | GinoTech</title>
+    <link rel="stylesheet" href="{% static 'admin_dashboard/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Manage Users</h1>
+        <p><a href="{% url 'dashboard_home' %}" style="color:white;">Back to Dashboard</a> | <a href="{% url 'user_logout' %}" style="color:white;">Logout</a></p>
+    </header>
+
+    <main>
+        <section>
+            <h2>All Users</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Is Staff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.is_staff }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">No users found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GinoTech. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

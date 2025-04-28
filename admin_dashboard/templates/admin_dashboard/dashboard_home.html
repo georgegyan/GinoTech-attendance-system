@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GinoTech Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin_dashboard/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to GinoTech Admin Dashboard</h1>
+        <p><a href="{% url 'user_logout' %}" style="color:white;">Logout</a></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Manage Users</a></li>
+            <li><a href="#">Attendance Records</a></li>
+            <li><a href="{% url 'manage_users' %}">Manage Users</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Dashboard Overview</h2>
+            <p>Here you can manage everything!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GinoTech. All rights reserved.</p>
+    </footer>
+</body>
+</html>
